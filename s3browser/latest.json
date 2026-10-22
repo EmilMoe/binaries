@@ -1,23 +1,23 @@
 {
-  "version": "0.3.0",
-  "notes": "- Pick the source from the first breadcrumb\n- Show the splitter lines again\n- Tabs, command palette, editable path and a draggable split\n- Fix the window going blank while dragging\n- Modern look with design tokens for dark and light mode (refs #16)\n- Favorites and recent folders in the sidebar and Go menu\n- Copy files dropped from Finder right away instead of asking copy or move\n- Fix where files dropped from Finder land on macOS\n- Large transfers: parallel parts, retry, pause/resume and a transfer queue\n- Calculate folder and bucket sizes on request\n- New updater signing key\n- CI: build and release in the public EmilMoe/binaries repo; S3Client only dispatches on tags\n- CI: explain opening the unnotarized macOS app in release notes\n- CI: leave version bump commits out of release notes",
-  "pub_date": "2026-10-22T19:15:07Z",
+  "version": "0.4.0",
+  "notes": "- Sync folders with S3 and schedule backups to a local disk\n- Check for updates on every start, manual download fallback, flatter buttons and app icon in update sheets\n- Plausible analytics and Download events on the landing page\n- Landing page for Vercel with download links to the latest release",
+  "pub_date": "2026-10-22T20:14:12Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjRIZU1hRDFNQ0VaS2l3YVd1VWpVdEpWd2phZzZKTUUxMHRzRWRwZDZRekFpdkVyV2pXSmdiWkhOdWcvcUpOTWc2MFVHTm16U1YxeSt1S0ptTDM0Y1FVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjk2Mjk1CWZpbGU6UzMgQnJvd3Nlci5hcHAudGFyLmd6CXZlcnNpb246MC4zLjAKSXZCanVyZm1TSGgyMExtdjl5TitGWjJhRGY2a25DSGVPTldHdlVFT3FveEk2cC9Wd2xQVUM5cFp2d0xWMENHVjYyWEdqZkdaWXFTQ2NhT0owaExhRHc9PQo=",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/s3browser-v0.3.0/S3Browser.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjBvTEJVN3RqUlFtUG0yRlhHTlNtSDF0VVAwKzZPYkN3MVVVZm9yNXU1TXhKdEdKeSs2c0ZXL2tVRVQrRGtNbmxscTZieExTYXZySzE4akRWYk01ckF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjk5OTg3CWZpbGU6UzMgQnJvd3Nlci5hcHAudGFyLmd6CXZlcnNpb246MC40LjAKSXZldlNraU5SR0N0ZU5MbW9QWnNMdGJUeUNTajl1RXhMUkQzUnNyNkRvQ05RRWdWL3pveWxNU2pOZklndE4vazdCaERBRmNoZ3pLMWU4cHVkM05IQkE9PQo=",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/s3browser-v0.4.0/S3Browser.app.tar.gz"
     },
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjRIZU1hRDFNQ0VaS2l3YVd1VWpVdEpWd2phZzZKTUUxMHRzRWRwZDZRekFpdkVyV2pXSmdiWkhOdWcvcUpOTWc2MFVHTm16U1YxeSt1S0ptTDM0Y1FVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjk2Mjk1CWZpbGU6UzMgQnJvd3Nlci5hcHAudGFyLmd6CXZlcnNpb246MC4zLjAKSXZCanVyZm1TSGgyMExtdjl5TitGWjJhRGY2a25DSGVPTldHdlVFT3FveEk2cC9Wd2xQVUM5cFp2d0xWMENHVjYyWEdqZkdaWXFTQ2NhT0owaExhRHc9PQo=",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/s3browser-v0.3.0/S3Browser.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjBvTEJVN3RqUlFtUG0yRlhHTlNtSDF0VVAwKzZPYkN3MVVVZm9yNXU1TXhKdEdKeSs2c0ZXL2tVRVQrRGtNbmxscTZieExTYXZySzE4akRWYk01ckF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjk5OTg3CWZpbGU6UzMgQnJvd3Nlci5hcHAudGFyLmd6CXZlcnNpb246MC40LjAKSXZldlNraU5SR0N0ZU5MbW9QWnNMdGJUeUNTajl1RXhMUkQzUnNyNkRvQ05RRWdWL3pveWxNU2pOZklndE4vazdCaERBRmNoZ3pLMWU4cHVkM05IQkE9PQo=",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/s3browser-v0.4.0/S3Browser.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWi9OQlovcDlROStyZkhMeXhWQTA3Q0tUQXhHRWZHMUU0TXJHVFFmeGZyRFYxQ005WEdnT2Z0elB2dFRGTEhreHhQNjRHL3dEZmd2ZVhFN0NvcFRzSlFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjk2MzU2CWZpbGU6UzMgQnJvd3Nlcl8wLjMuMF94NjRfZW4tVVMubXNpCXZlcnNpb246MC4zLjAKQzBMMndDZ00rVXhDcHZGRmZmR1RyV1YxMm1uRDNKbTZlZ0J1TmpZRjV1Z3gwMk1mbDFINnNuSHJsV1RmcWtHUi9rbjJjeGdseXM2TWZVZGZodUcxQkE9PQo=",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/s3browser-v0.3.0/S3Browser.msi"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWi8wSTI4Qk14dDBFM2RJUU91RGRIN3RmZW9Wa2crVEJsWXBVbFZZSXJ2UEEzRXkrOGZ2WE9BcVhKVmRLSjlyMzNHTjF4NlJYNCtlQWUvNUdrbG0yZ0E4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjk5ODAwCWZpbGU6UzMgQnJvd3Nlcl8wLjQuMF94NjRfZW4tVVMubXNpCXZlcnNpb246MC40LjAKd043ZzNlbkZmNEI1dTBNOVBHUEZMbEI0ZU5XTkRhbkZyOWlReUpVU3BXRFNDeEkrZXd4VmZVS0p1a0cvaGlvc2NPZTR4ZTg2ZGJNUjk0RE5JSzg2RFE9PQo=",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/s3browser-v0.4.0/S3Browser.msi"
     },
     "linux-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjR3OCt4cjBBeGNPeEY0dlNhTnprQ3liREpETkNuemsvM3FzMWlzUmIwU3BxQXZQaHI1VkdjcXRSSitES0VkRnc1THoxcWlqVzNVUjVzeituNWFaYndFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjk2NDc4CWZpbGU6UzMgQnJvd3Nlcl8wLjMuMF9hbWQ2NC5BcHBJbWFnZQl2ZXJzaW9uOjAuMy4wCktseXh1bzNIVVhNa2NJSjFJbXVKWE5COEMrckNMcVZxdVFBWlhEcnNHdVZwSVo3TGtZOTlVMGxWYXQzMDN0T3R6aTQrUTNiWU0reUVxb0NXUUJoSkFBPT0K",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/s3browser-v0.3.0/S3Browser.AppImage"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjlWNy92WWJnM0NXNmNuZFpXS3FzWEJIL1JZNzBiQVVNbkFsNlZuT3ZWbzJlZ1kwTGo3WG5jYk41R09tVFphS1BuNEk0WHZ2aDgyYUIzRzlORGpaRVFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjk5NjEzCWZpbGU6UzMgQnJvd3Nlcl8wLjQuMF9hbWQ2NC5BcHBJbWFnZQl2ZXJzaW9uOjAuNC4wCkFTaFYxQzBERnQzQXdId1lpellJRktFbnRlS2xVQmp6NTVFR1JaNzJEVTV6aGRLMUZicXRCMWxTeEx1dG1HWDNmeTBrbWNEdDZYMTFWWjRjOWt4OUFRPT0K",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/s3browser-v0.4.0/S3Browser.AppImage"
     }
   }
 }
