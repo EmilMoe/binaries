@@ -152,7 +152,8 @@ jobs:
             if gh release view "$tag" --repo "$REPO" > /dev/null 2>&1; then
               gh release upload "$tag" "${files[@]}" --repo "$REPO" --clobber
             else
-              gh release create "$tag" "${files[@]}" --repo "$REPO" --target main \
+              # --latest=false: the repo's "Latest" badge stays on the apps' releases.
+              gh release create "$tag" "${files[@]}" --repo "$REPO" --target main --latest=false \
                 --title "Apsara PHP $full" \
                 --notes "Static PHP $full for Apsara, built with static-php-cli $SPC_VERSION. Extensions: $EXTENSIONS (+ $UNIX_EXTENSIONS on macOS)."
             fi
