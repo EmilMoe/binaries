@@ -13,7 +13,7 @@ on:
       php-versions:
         description: PHP minor versions as a JSON list
         required: true
-        default: '["8.2", "8.3", "8.4", "8.5"]'
+        default: '["8.3", "8.4", "8.5", "8.6"]'
 
 env:
   SPC_VERSION: "2.8.5"
@@ -73,16 +73,32 @@ jobs:
             echo "PHP_BIN=buildroot/bin/php" >> "$GITHUB_ENV"
           fi
 
+      # A version without a final release yet (8.6 in autumn 2026) is built from php.net's
+      # newest release candidate, and marked as a prerelease below.
+      - name: Find PHP source
+        shell: bash
+        run: |
+          minor="${{ matrix.php }}"
+          if curl -fsSL "https://www.php.net/releases/index.php?json&version=$minor" | jq -e .version > /dev/null; then
+            echo "Final release of PHP $minor exists"
+          else
+            url=$(curl -fsSL "https://www.php.net/release-candidates.php?format=json" | jq -r --arg v "$minor.0" '.[$v] | select(.active) | .release.files.xz.path')
+            [ -n "$url" ] && [ "$url" != null ] || { echo "::error::No release or release candidate for PHP $minor"; exit 1; }
+            echo "Using $url"
+            echo "CUSTOM_SOURCE=-U php-src:$url" >> "$GITHUB_ENV"
+          fi
+
       - name: Prepare build tools
         run: ${{ env.SPC }} doctor --auto-fix
 
       - uses: actions/cache@v6
         with:
           path: downloads
-          key: spc-downloads-${{ matrix.target }}-${{ matrix.php }}-${{ env.SPC_VERSION }}
+          # A new release candidate changes CUSTOM_SOURCE, so it gets a fresh cache.
+          key: spc-downloads-${{ matrix.target }}-${{ matrix.php }}-${{ env.SPC_VERSION }}-${{ env.CUSTOM_SOURCE }}
 
       - name: Download sources
-        run: ${{ env.SPC }} download --with-php="${{ matrix.php }}" --for-extensions="${{ env.EXT }}" --prefer-pre-built
+        run: ${{ env.SPC }} download --with-php="${{ matrix.php }}" --for-extensions="${{ env.EXT }}" --prefer-pre-built ${{ env.CUSTOM_SOURCE }}
 
       - name: Build
         run: ${{ env.SPC }} build "${{ env.EXT }}" --build-cli
@@ -156,14 +172,18 @@ jobs:
           existing=$(gh api "repos/$REPO/contents/$path" --jq .content 2>/dev/null | base64 -d 2>/dev/null || echo '{}')
           manifest=${existing:-'{}'}
 
-          for full in $(ls dist | sed -nE 's/^php-([0-9]+\.[0-9]+\.[0-9]+)-cli-.*\.(tar\.gz|zip)$/\1/p' | sort -u); do
+          for full in $(ls dist | sed -nE 's/^php-([0-9]+\.[0-9]+\.[0-9]+[A-Za-z0-9]*)-cli-.*\.(tar\.gz|zip)$/\1/p' | sort -u); do
             tag="apsara-php-$full"
+            # 8.6.0RC4 and the like.
+            prerelease=false
+            [[ "$full" =~ [A-Za-z] ]] && prerelease=true
             files=(dist/php-$full-cli-*.tar.gz dist/php-$full-cli-*.zip)
             if gh release view "$tag" --repo "$REPO" > /dev/null 2>&1; then
               gh release upload "$tag" "${files[@]}" --repo "$REPO" --clobber
             else
               # --latest=false: the repo's "Latest" badge stays on the apps' releases.
               gh release create "$tag" "${files[@]}" --repo "$REPO" --target main --latest=false \
+                $([ "$prerelease" = true ] && echo --prerelease) \
                 --title "Apsara PHP $full" \
                 --notes "Static PHP $full for Apsara, built with static-php-cli $SPC_VERSION. Extensions: $EXTENSIONS (+ $UNIX_EXTENSIONS on macOS)."
             fi
@@ -171,11 +191,11 @@ jobs:
             minor=${full%.*}
             for file in "${files[@]}"; do
               name=$(basename "$file")
-              target=$(sed -E 's/^php-[0-9.]+-cli-(.*)\.(tar\.gz|zip)$/\1/' <<< "$name")
-              manifest=$(jq --arg minor "$minor" --arg full "$full" --arg target "$target" \
+              target=$(sed -E 's/^php-[0-9A-Za-z.]+-cli-(.*)\.(tar\.gz|zip)$/\1/' <<< "$name")
+              manifest=$(jq --arg minor "$minor" --arg full "$full" --arg target "$target" --argjson pre "$prerelease" \
                 --arg url "https://github.com/$REPO/releases/download/$tag/$name" \
                 --arg sha "$(cat "$file.sha256")" \
-                '.[$minor] |= (if (.version // "0") != $full then {version: $full, files: {}} else . end)
+                '.[$minor] |= (if (.version // "0") != $full then {version: $full, prerelease: $pre, files: {}} else . end)
                  | .[$minor].files[$target] = {url: $url, sha256: $sha}' <<< "$manifest")
             done
           done
