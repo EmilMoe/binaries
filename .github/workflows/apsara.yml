@@ -90,23 +90,23 @@ jobs:
       - name: Collect files with fixed names
         shell: bash
         run: |
-          mkdir dist
+          mkdir out
           case "$RUNNER_OS" in
             macOS)
               b=src-tauri/target/universal-apple-darwin/release/bundle
-              cp $b/dmg/*.dmg dist/Apsara.dmg
-              cp $b/macos/*.app.tar.gz dist/Apsara.app.tar.gz
-              cp $b/macos/*.app.tar.gz.sig dist/Apsara.app.tar.gz.sig ;;
+              cp $b/dmg/*.dmg out/Apsara.dmg
+              cp $b/macos/*.app.tar.gz out/Apsara.app.tar.gz
+              cp $b/macos/*.app.tar.gz.sig out/Apsara.app.tar.gz.sig ;;
             Windows)
-              cp src-tauri/target/release/bundle/msi/*.msi dist/Apsara.msi
-              cp src-tauri/target/release/bundle/msi/*.msi.sig dist/Apsara.msi.sig ;;
+              cp src-tauri/target/release/bundle/msi/*.msi out/Apsara.msi
+              cp src-tauri/target/release/bundle/msi/*.msi.sig out/Apsara.msi.sig ;;
           esac
-          ls -l dist
+          ls -l out
 
       - uses: actions/upload-artifact@v7
         with:
           name: apsara-${{ runner.os }}
-          path: dist/*
+          path: out/*
           if-no-files-found: error
           retention-days: 7
 
@@ -129,7 +129,7 @@ jobs:
       - uses: actions/download-artifact@v7
         with:
           pattern: apsara-*
-          path: dist
+          path: out
           merge-multiple: true
 
       - name: Release notes from the commits since the previous tag
@@ -152,7 +152,7 @@ jobs:
           **Windows:** if SmartScreen warns, click More info → Run anyway.
           NOTE
           } > body.md
-          gh release create "apsara-$REF" $(ls dist/* | grep -v '\.sig$') \
+          gh release create "apsara-$REF" $(ls out/* | grep -v '\.sig$') \
             --repo "$GITHUB_REPOSITORY" --target main \
             --title "Apsara $REF" --notes-file body.md
 
@@ -166,8 +166,8 @@ jobs:
             --rawfile notes notes.md \
             --arg date "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
             --arg url "$url" \
-            --rawfile mac dist/Apsara.app.tar.gz.sig \
-            --rawfile win dist/Apsara.msi.sig \
+            --rawfile mac out/Apsara.app.tar.gz.sig \
+            --rawfile win out/Apsara.msi.sig \
             '{version: $version, notes: ($notes | rtrimstr("\n")), pub_date: $date, platforms: {
               "darwin-aarch64": {signature: ($mac | rtrimstr("\n")), url: "\($url)/Apsara.app.tar.gz"},
               "darwin-x86_64": {signature: ($mac | rtrimstr("\n")), url: "\($url)/Apsara.app.tar.gz"},
