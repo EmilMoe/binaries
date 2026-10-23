@@ -11,9 +11,11 @@ on:
   workflow_dispatch:
     inputs:
       php-versions:
+        # 8.6 needs static-php-cli v3 (its 2.8.5 patches don't apply to 8.6 sources).
+        # When v3 is released: bump SPC_VERSION and add "8.6" here.
         description: PHP minor versions as a JSON list
         required: true
-        default: '["8.3", "8.4", "8.5", "8.6"]'
+        default: '["8.3", "8.4", "8.5"]'
 
 env:
   SPC_VERSION: "2.8.5"
