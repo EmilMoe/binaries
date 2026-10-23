@@ -14,7 +14,7 @@ name: S3 Browser
 #   Linux   S3Browser.AppImage  (portable, needs FUSE)
 # plus the signed updater files (S3Browser.app.tar.gz, .msi and .AppImage with .sig).
 #
-# Secrets: S3CLIENT_TOKEN (fine-grained, Contents read on EmilMoe/S3Client),
+# Secrets: APPS_TOKEN (fine-grained, Contents read on EmilMoe/S3Client),
 # TAURI_SIGNING_PRIVATE_KEY and TAURI_SIGNING_PRIVATE_KEY_PASSWORD.
 on:
   repository_dispatch:
@@ -57,7 +57,7 @@ jobs:
         with:
           repository: EmilMoe/S3Client
           ref: ${{ env.REF }}
-          token: ${{ secrets.S3CLIENT_TOKEN }}
+          token: ${{ secrets.APPS_TOKEN }}
           persist-credentials: false
 
       - name: Check that the tag matches the app version
@@ -136,7 +136,7 @@ jobs:
         with:
           repository: EmilMoe/S3Client
           ref: ${{ env.REF }}
-          token: ${{ secrets.S3CLIENT_TOKEN }}
+          token: ${{ secrets.APPS_TOKEN }}
           persist-credentials: false
           fetch-depth: 0
           path: src
