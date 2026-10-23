@@ -1,0 +1,54 @@
+{
+  "8.2": {
+    "files": {
+      "macos-aarch64": {
+        "sha256": "7774bd6cbd5615b84425dc2346ffa394334ea6eda560db5be71d735bf69b5712",
+        "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-php-8.2.35/php-8.2.35-cli-macos-aarch64.tar.gz"
+      },
+      "macos-x86_64": {
+        "sha256": "2e1cc1f02855177c89bf966ef52fe522eb59954eadd8b9cdd53601f1c99b73f6",
+        "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-php-8.2.35/php-8.2.35-cli-macos-x86_64.tar.gz"
+      }
+    },
+    "version": "8.2.35"
+  },
+  "8.3": {
+    "files": {
+      "macos-aarch64": {
+        "sha256": "57b0da46e9218fa83bfa8f5dd1dfd0726730e5b3b86be1b5d8397a31e01e56ae",
+        "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-php-8.3.36/php-8.3.36-cli-macos-aarch64.tar.gz"
+      },
+      "macos-x86_64": {
+        "sha256": "f7fadf8019f0036647fd1cffbff1113b4f98d571d31ba8e3eeca2e92396c6b7c",
+        "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-php-8.3.36/php-8.3.36-cli-macos-x86_64.tar.gz"
+      }
+    },
+    "version": "8.3.36"
+  },
+  "8.4": {
+    "files": {
+      "macos-aarch64": {
+        "sha256": "c9d5388ab6a26fca8785d33abed0cd2c82c8ce59af33fbc93443b0e801b796c4",
+        "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-php-8.4.27/php-8.4.27-cli-macos-aarch64.tar.gz"
+      },
+      "macos-x86_64": {
+        "sha256": "ce0083e809e47df49ee12ce9982c1070ce2f8c600de33249a8f9adcc1f7cd173",
+        "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-php-8.4.27/php-8.4.27-cli-macos-x86_64.tar.gz"
+      }
+    },
+    "version": "8.4.27"
+  },
+  "8.5": {
+    "files": {
+      "macos-aarch64": {
+        "sha256": "f563eb9ab5d38e07ab40d87a541d50aa5de5eed292cdfe0f1c6b80b3f7a6bf80",
+        "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-php-8.5.12/php-8.5.12-cli-macos-aarch64.tar.gz"
+      },
+      "macos-x86_64": {
+        "sha256": "5c5d60ae3e8633ca5af65d75893750cae8e8161c71425acd7bfd3e2794715f62",
+        "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-php-8.5.12/php-8.5.12-cli-macos-x86_64.tar.gz"
+      }
+    },
+    "version": "8.5.12"
+  }
+}
