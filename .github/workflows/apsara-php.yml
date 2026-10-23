@@ -39,13 +39,17 @@ jobs:
           - target: macos-aarch64
             runner: macos-15
             spc: spc-macos-aarch64.tar.gz
+            shell: bash
           - target: macos-x86_64
             runner: macos-15-intel
             spc: spc-macos-x86_64.tar.gz
-          # spc 2.8.5 only recognises Visual Studio 2019/2022.
+            shell: bash
+          # spc 2.8.5 only recognises Visual Studio 2019/2022, and needs Windows' own tar
+          # (PowerShell), not Git Bash's GNU tar, which can't handle D:\ paths.
           - target: windows-x64
             runner: windows-2022
             spc: spc-windows-x64.exe
+            shell: pwsh
     defaults:
       run:
         shell: bash
@@ -67,7 +71,8 @@ jobs:
           fi
 
       - name: Prepare build tools
-        run: $SPC doctor --auto-fix
+        shell: ${{ matrix.shell }}
+        run: ${{ env.SPC }} doctor --auto-fix
 
       - uses: actions/cache@v6
         with:
@@ -75,10 +80,12 @@ jobs:
           key: spc-downloads-${{ matrix.target }}-${{ matrix.php }}-${{ env.SPC_VERSION }}
 
       - name: Download sources
-        run: $SPC download --with-php="${{ matrix.php }}" --for-extensions="$EXT" --prefer-pre-built
+        shell: ${{ matrix.shell }}
+        run: ${{ env.SPC }} download --with-php="${{ matrix.php }}" --for-extensions="${{ env.EXT }}" --prefer-pre-built
 
       - name: Build
-        run: $SPC build "$EXT" --build-cli
+        shell: ${{ matrix.shell }}
+        run: ${{ env.SPC }} build "${{ env.EXT }}" --build-cli
 
       - name: Smoke test
         run: |
