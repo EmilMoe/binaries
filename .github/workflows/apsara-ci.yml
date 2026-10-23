@@ -1,0 +1,63 @@
+name: Apsara CI
+
+# Tests for Apsara (private repo EmilMoe/apsara-app) on macOS and Windows. The source is only
+# checked out on the runner. Started by hand from the Actions tab or with
+#   gh workflow run apsara-ci.yml -R EmilMoe/binaries -f ref=main
+#
+# Secret: APSARA_TOKEN (fine-grained, Contents read on EmilMoe/apsara-app).
+on:
+  repository_dispatch:
+    types: [apsara-ci]
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: apsara-app branch, tag or commit
+        required: true
+        default: main
+
+# The logs are public: keep compiler warnings (which quote source lines) out of them.
+env:
+  REF: ${{ github.event.client_payload.ref || inputs.ref }}
+  RUSTFLAGS: -Awarnings
+
+concurrency: apsara-ci-${{ github.event.client_payload.ref || inputs.ref }}
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: EmilMoe/apsara-app
+          ref: ${{ env.REF }}
+          token: ${{ secrets.APSARA_TOKEN }}
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Frontend build
+        run: |
+          npm ci
+          npm run build
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri -> target
+          key: apsara
+
+      - name: Rust tests
+        working-directory: src-tauri
+        run: cargo test
