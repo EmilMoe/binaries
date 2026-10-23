@@ -6,7 +6,7 @@
         "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-php-8.2.35/php-8.2.35-cli-macos-aarch64.tar.gz"
       },
       "macos-x86_64": {
-        "sha256": "2e1cc1f02855177c89bf966ef52fe522eb59954eadd8b9cdd53601f1c99b73f6",
+        "sha256": "1241d4f6dc16592c728c421c7f4009d2a8eb9309b5a1ffe4a990b84ec34ef502",
         "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-php-8.2.35/php-8.2.35-cli-macos-x86_64.tar.gz"
       }
     },
@@ -15,11 +15,11 @@
   "8.3": {
     "files": {
       "macos-aarch64": {
-        "sha256": "57b0da46e9218fa83bfa8f5dd1dfd0726730e5b3b86be1b5d8397a31e01e56ae",
+        "sha256": "c9e6ca357857efc02a42e9496d8e8098879996ca2c67631842c7d8df2fd7b1b9",
         "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-php-8.3.36/php-8.3.36-cli-macos-aarch64.tar.gz"
       },
       "macos-x86_64": {
-        "sha256": "f7fadf8019f0036647fd1cffbff1113b4f98d571d31ba8e3eeca2e92396c6b7c",
+        "sha256": "a35cd6b48ae8fbae9d9a4a0ac9fee8f8dd0f05682d831aa5e031c0b2b40afbb4",
         "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-php-8.3.36/php-8.3.36-cli-macos-x86_64.tar.gz"
       }
     },
@@ -28,12 +28,16 @@
   "8.4": {
     "files": {
       "macos-aarch64": {
-        "sha256": "c9d5388ab6a26fca8785d33abed0cd2c82c8ce59af33fbc93443b0e801b796c4",
+        "sha256": "947253de712feac11bdccbd9bcd41108139adab0cf7a69f9a8e98cfca96fbbe5",
         "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-php-8.4.27/php-8.4.27-cli-macos-aarch64.tar.gz"
       },
       "macos-x86_64": {
         "sha256": "ce0083e809e47df49ee12ce9982c1070ce2f8c600de33249a8f9adcc1f7cd173",
         "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-php-8.4.27/php-8.4.27-cli-macos-x86_64.tar.gz"
+      },
+      "windows-x64": {
+        "sha256": "33d1f3931dfe57ab1766724e85556c51fcdb1ec151cd12d5a5e09addfdf51bb1",
+        "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-php-8.4.27/php-8.4.27-cli-windows-x64.zip"
       }
     },
     "version": "8.4.27"
@@ -41,12 +45,16 @@
   "8.5": {
     "files": {
       "macos-aarch64": {
-        "sha256": "f563eb9ab5d38e07ab40d87a541d50aa5de5eed292cdfe0f1c6b80b3f7a6bf80",
+        "sha256": "9fa1f65a94adfab8f8a46ddc7586c8555ba0a68b0479344ca9e28398eef08ab9",
         "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-php-8.5.12/php-8.5.12-cli-macos-aarch64.tar.gz"
       },
       "macos-x86_64": {
         "sha256": "5c5d60ae3e8633ca5af65d75893750cae8e8161c71425acd7bfd3e2794715f62",
         "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-php-8.5.12/php-8.5.12-cli-macos-x86_64.tar.gz"
+      },
+      "windows-x64": {
+        "sha256": "249ecb1d070653e5cdd105d35e150c8f5587dbe0881f2ef242b1853733f13f6c",
+        "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-php-8.5.12/php-8.5.12-cli-windows-x64.zip"
       }
     },
     "version": "8.5.12"
