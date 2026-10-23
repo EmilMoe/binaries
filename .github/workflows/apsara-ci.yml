@@ -4,7 +4,7 @@ name: Apsara CI
 # checked out on the runner. Started by hand from the Actions tab or with
 #   gh workflow run apsara-ci.yml -R EmilMoe/binaries -f ref=main
 #
-# Secret: APSARA_TOKEN (fine-grained, Contents read on EmilMoe/apsara-app).
+# Secret: APPS_TOKEN (fine-grained, Contents read on EmilMoe/apsara-app).
 on:
   repository_dispatch:
     types: [apsara-ci]
@@ -38,7 +38,7 @@ jobs:
         with:
           repository: EmilMoe/apsara-app
           ref: ${{ env.REF }}
-          token: ${{ secrets.APSARA_TOKEN }}
+          token: ${{ secrets.APPS_TOKEN }}
           persist-credentials: false
 
       - uses: actions/setup-node@v4
