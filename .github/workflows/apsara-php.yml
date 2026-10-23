@@ -50,11 +50,14 @@ jobs:
             runner: windows-2022
             spc: spc-windows-x64.exe
             shell: pwsh
+    # spc runs in the matrix shell (PowerShell on Windows); the other steps say `shell: bash`.
+    # (Steps can't use `matrix` in `shell:`, job defaults can.)
     defaults:
       run:
-        shell: bash
+        shell: ${{ matrix.shell }}
     steps:
       - name: Get static-php-cli
+        shell: bash
         run: |
           url="https://github.com/crazywhalecc/static-php-cli/releases/download/${SPC_VERSION}/${{ matrix.spc }}"
           if [[ "${{ matrix.spc }}" == *.exe ]]; then
@@ -71,7 +74,6 @@ jobs:
           fi
 
       - name: Prepare build tools
-        shell: ${{ matrix.shell }}
         run: ${{ env.SPC }} doctor --auto-fix
 
       - uses: actions/cache@v6
@@ -80,14 +82,13 @@ jobs:
           key: spc-downloads-${{ matrix.target }}-${{ matrix.php }}-${{ env.SPC_VERSION }}
 
       - name: Download sources
-        shell: ${{ matrix.shell }}
         run: ${{ env.SPC }} download --with-php="${{ matrix.php }}" --for-extensions="${{ env.EXT }}" --prefer-pre-built
 
       - name: Build
-        shell: ${{ matrix.shell }}
         run: ${{ env.SPC }} build "${{ env.EXT }}" --build-cli
 
       - name: Smoke test
+        shell: bash
         run: |
           "$PHP_BIN" -v
           # Capture first: `php -m | grep -q` can fail under pipefail when grep exits early.
@@ -99,6 +100,7 @@ jobs:
           "$PHP_BIN" -r 'echo (new NumberFormatter("da_DK", NumberFormatter::CURRENCY))->formatCurrency(1234.5, "DKK"), PHP_EOL;'
 
       - name: Package
+        shell: bash
         run: |
           full=$("$PHP_BIN" -r 'echo PHP_VERSION;')
           mkdir -p dist
