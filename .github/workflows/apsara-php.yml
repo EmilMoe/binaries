@@ -87,6 +87,16 @@ jobs:
       - name: Build
         run: ${{ env.SPC }} build "${{ env.EXT }}" --build-cli
 
+      # spc only prints "command failed"; the compiler output is in its own log files.
+      - name: Show build log
+        if: failure()
+        shell: bash
+        run: |
+          for f in log/spc.shell.log log/spc.output.log; do
+            [ -f "$f" ] && { echo "::group::$f"; tail -n 150 "$f"; echo "::endgroup::"; }
+          done
+          grep -nE "error C[0-9]+|fatal error|LNK[0-9]+" log/spc.shell.log 2>/dev/null | head -40 || true
+
       - name: Smoke test
         shell: bash
         run: |
