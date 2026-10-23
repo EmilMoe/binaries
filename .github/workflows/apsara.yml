@@ -1,0 +1,182 @@
+name: Apsara
+
+# Builds Apsara from the private EmilMoe/apsara-app repo. The source is only checked out on
+# the runner; this repo holds the releases and apsara/latest.json, which the installed apps
+# check for updates.
+#
+# Started by apsara-app when a tag like v0.2.0 is pushed (repository_dispatch), or by hand from
+# the Actions tab. A v* ref publishes release apsara-<ref>; any other ref only builds.
+#
+# Files per platform:
+#   macOS   Apsara.dmg  (universal: Apple Silicon + Intel)
+#   Windows Apsara.msi  (installer; Tauri's updater can only replace an MSI install)
+# plus the signed updater files (Apsara.app.tar.gz and Apsara.msi with .sig).
+#
+# Secrets: APPS_TOKEN (fine-grained, Contents read on EmilMoe/apsara-app),
+# TAURI_SIGNING_PRIVATE_KEY and TAURI_SIGNING_PRIVATE_KEY_PASSWORD.
+on:
+  repository_dispatch:
+    types: [apsara-release]
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: apsara-app tag or branch (v* publishes a release)
+        required: true
+        default: main
+
+# The logs are public: keep compiler warnings (which quote source lines) out of them.
+env:
+  REF: ${{ github.event.client_payload.ref || inputs.ref }}
+  RUSTFLAGS: -Awarnings
+
+concurrency: apsara-${{ github.event.client_payload.ref || inputs.ref }}
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: macos-latest
+            args: --target universal-apple-darwin --bundles app,dmg
+            rust-targets: aarch64-apple-darwin,x86_64-apple-darwin
+          - platform: windows-latest
+            args: --bundles msi
+            rust-targets: ""
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          repository: EmilMoe/apsara-app
+          ref: ${{ env.REF }}
+          token: ${{ secrets.APPS_TOKEN }}
+          persist-credentials: false
+
+      - name: Check that the tag matches the app version
+        if: startsWith(env.REF, 'v')
+        shell: bash
+        run: |
+          version=$(node -p "require('./src-tauri/tauri.conf.json').version")
+          if [ "v$version" != "$REF" ]; then
+            echo "::error::Tag $REF doesn't match version $version in tauri.conf.json (run npm run bump)"
+            exit 1
+          fi
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.rust-targets }}
+
+      # Runs always start from this repo's main, so the cache carries over between releases.
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri -> target
+          key: apsara-release
+
+      - run: npm ci
+
+      - run: npm run tauri -- build ${{ matrix.args }} --config src-tauri/tauri.release.conf.json
+        env:
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+
+      - name: Collect files with fixed names
+        shell: bash
+        run: |
+          mkdir dist
+          case "$RUNNER_OS" in
+            macOS)
+              b=src-tauri/target/universal-apple-darwin/release/bundle
+              cp $b/dmg/*.dmg dist/Apsara.dmg
+              cp $b/macos/*.app.tar.gz dist/Apsara.app.tar.gz
+              cp $b/macos/*.app.tar.gz.sig dist/Apsara.app.tar.gz.sig ;;
+            Windows)
+              cp src-tauri/target/release/bundle/msi/*.msi dist/Apsara.msi
+              cp src-tauri/target/release/bundle/msi/*.msi.sig dist/Apsara.msi.sig ;;
+          esac
+          ls -l dist
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: apsara-${{ runner.os }}
+          path: dist/*
+          if-no-files-found: error
+          retention-days: 7
+
+  release:
+    if: startsWith(github.event.client_payload.ref || inputs.ref, 'v')
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          repository: EmilMoe/apsara-app
+          ref: ${{ env.REF }}
+          token: ${{ secrets.APPS_TOKEN }}
+          persist-credentials: false
+          fetch-depth: 0
+          path: src
+
+      - uses: actions/download-artifact@v7
+        with:
+          pattern: apsara-*
+          path: dist
+          merge-multiple: true
+
+      - name: Release notes from the commits since the previous tag
+        run: |
+          prev=$(git -C src describe --tags --abbrev=0 --match 'v*' "$REF^" 2>/dev/null || true)
+          git -C src log --no-merges --pretty='- %s' ${prev:+$prev..}"$REF" \
+            | sed -E '/^- Version [0-9]+\.[0-9]+\.[0-9]+$/d; s/ \(closes #[0-9]+\)//' > notes.md
+          cat notes.md
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          {
+            cat notes.md
+            echo
+            cat <<'NOTE'
+          **macOS:** the app isn't notarized by Apple, so the first launch says "Apsara" Not Opened. Click Done, then open System Settings → Privacy & Security and click **Open Anyway**. Or run `xattr -dr com.apple.quarantine /Applications/Apsara.app` in Terminal. Updates installed from within the app open normally.
+
+          **Windows:** if SmartScreen warns, click More info → Run anyway.
+          NOTE
+          } > body.md
+          gh release create "apsara-$REF" $(ls dist/* | grep -v '\.sig$') \
+            --repo "$GITHUB_REPOSITORY" --target main \
+            --title "Apsara $REF" --notes-file body.md
+
+      - name: Update apsara/latest.json
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          url="https://github.com/$GITHUB_REPOSITORY/releases/download/apsara-$REF"
+          jq -n \
+            --arg version "${REF#v}" \
+            --rawfile notes notes.md \
+            --arg date "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            --arg url "$url" \
+            --rawfile mac dist/Apsara.app.tar.gz.sig \
+            --rawfile win dist/Apsara.msi.sig \
+            '{version: $version, notes: ($notes | rtrimstr("\n")), pub_date: $date, platforms: {
+              "darwin-aarch64": {signature: ($mac | rtrimstr("\n")), url: "\($url)/Apsara.app.tar.gz"},
+              "darwin-x86_64": {signature: ($mac | rtrimstr("\n")), url: "\($url)/Apsara.app.tar.gz"},
+              "windows-x86_64": {signature: ($win | rtrimstr("\n")), url: "\($url)/Apsara.msi"}
+            }}' > latest.json
+          cat latest.json
+          path=apsara/latest.json
+          sha=$(gh api "repos/$GITHUB_REPOSITORY/contents/$path" --jq .sha 2>/dev/null || true)
+          gh api -X PUT "repos/$GITHUB_REPOSITORY/contents/$path" \
+            -f message="Apsara $REF" \
+            -f content="$(base64 -w0 latest.json)" \
+            ${sha:+-f sha="$sha"} > /dev/null
