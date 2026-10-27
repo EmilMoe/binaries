@@ -1,0 +1,23 @@
+{
+  "version": "0.6.0",
+  "notes": "- Rename the app to Nimbo with a new icon (cloud filling a bucket)\n- Landing page: live demo of the real app on a mocked Tauri backend with made-up data\n- Undo and redo (⌘Z / ⇧⌘Z) for delete, move, rename and new folder\n- Landing page: downloads stream through the site, no GitHub links or release notes\n- Send the visitor's IP as X-Plausible-IP so a proxy in front of Plausible can't replace it with Vercel's\n- Update checks go to their own Plausible site (PLAUSIBLE_APP_DOMAIN)\n- Icon and gallery views with lazily loaded, disk-cached thumbnails; favorites move to Option-Command digits",
+  "pub_date": "2026-10-27T14:33:18Z",
+  "platforms": {
+    "darwin-aarch64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWndCRG9FMmIyZ21tWmhTcytPVGdTb2k1LzhrZ1VlZDZJVGhLVXZENDZ5RjExZkdqaVVHRXBwUXJ2ZHkxWjNId0RqTmk2bGZlNEI0UmZZQ1ZCOVZFVmdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTExNTIwCWZpbGU6TmltYm8uYXBwLnRhci5negl2ZXJzaW9uOjAuNi4wCm9QRXRzMWJpcHVYcnJCaGsvQjl2WEF3VXFpNlRqS09mQ3FmWFAxQ1AyS1drWU5vbTM3YW9wWUk5VjN0VVZmc3Z6R09UTFZmNjBQR2c3MEY0QzVNQkFRPT0K",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/s3browser-v0.6.0/S3Browser.app.tar.gz"
+    },
+    "darwin-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWndCRG9FMmIyZ21tWmhTcytPVGdTb2k1LzhrZ1VlZDZJVGhLVXZENDZ5RjExZkdqaVVHRXBwUXJ2ZHkxWjNId0RqTmk2bGZlNEI0UmZZQ1ZCOVZFVmdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTExNTIwCWZpbGU6TmltYm8uYXBwLnRhci5negl2ZXJzaW9uOjAuNi4wCm9QRXRzMWJpcHVYcnJCaGsvQjl2WEF3VXFpNlRqS09mQ3FmWFAxQ1AyS1drWU5vbTM3YW9wWUk5VjN0VVZmc3Z6R09UTFZmNjBQR2c3MEY0QzVNQkFRPT0K",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/s3browser-v0.6.0/S3Browser.app.tar.gz"
+    },
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWndVQzdLK2l0b0tiNVJEZE52QUkxL1BOS2J0V1Z5K01SNjBJOHFBZWtXWVd2dWZOaHhscGs4WEY1aktnOWFCQUtYcjdveVlCWlZWSkh5djlodVpqT1FFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTEwODY0CWZpbGU6TmltYm9fMC42LjBfeDY0X2VuLVVTLm1zaQl2ZXJzaW9uOjAuNi4wCnJ6TE01STgxYXRHa2xLODdlZUs0cXpwRmZjT28vcmZhYWo0SHNPYlBWc3ovWGdTSWljdkJFcVJ1YUgwdndGYUZRQ0hoL1ZrY2tLY1B6bmhTR1VmN0JRPT0K",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/s3browser-v0.6.0/S3Browser.msi"
+    },
+    "linux-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjVsK0xUV1lKN01adEhRTERENzREY2s4VGN2VzUwY3FnbUdrcGZzSEFXUGNaY0xIcGdYWVVPeEcxT0NTWlNHemlCdHJnRVpsbGgraHZ6NWQ5OXF4TXdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTEwNjUzCWZpbGU6TmltYm9fMC42LjBfYW1kNjQuQXBwSW1hZ2UJdmVyc2lvbjowLjYuMAowdFBGRDhIc1QrWllZQU81UU1NMytHOTA5R2p1OG9UOXdDekIxSGI5L2NFSWxQS3ZrcHdPMysyOUdRMEZ5TmlRU25NbGVSOXRqczFaQXdnVGZwWnlEUT09Cg==",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/s3browser-v0.6.0/S3Browser.AppImage"
+    }
+  }
+}
