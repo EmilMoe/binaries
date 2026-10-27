@@ -1,23 +1,23 @@
 {
-  "version": "0.5.0",
-  "notes": "- User-facing message instead of an npm hint when registering the s3:// handler outside the installed app\n- Anonymous update-check counting: updater goes through the landing page, which logs an UpdateCheck event with OS, arch and version; Plausible events carry source=web/app\n- Bucket settings: info, lifecycle and CORS in the bucket info sheet\n- Sync sheet in the same grouped style as the backup sheet\n- Command palette: full-height input from the start and shortcut hints (⌘K, ⌘F)\n- Backups in both directions, a native-style sheet and a Backups section in the sidebar\n- Landing page redesign with an accurate app mockup; Finder-style file icons and striped rows in the app\n- Landing page: sync, scheduled backups and cleanup of unfinished uploads",
-  "pub_date": "2026-10-22T22:21:40Z",
+  "version": "0.6.0",
+  "notes": "- Rename the app to Nimbo with a new icon (cloud filling a bucket)\n- Landing page: live demo of the real app on a mocked Tauri backend with made-up data\n- Undo and redo (⌘Z / ⇧⌘Z) for delete, move, rename and new folder\n- Landing page: downloads stream through the site, no GitHub links or release notes\n- Send the visitor's IP as X-Plausible-IP so a proxy in front of Plausible can't replace it with Vercel's\n- Update checks go to their own Plausible site (PLAUSIBLE_APP_DOMAIN)\n- Icon and gallery views with lazily loaded, disk-cached thumbnails; favorites move to Option-Command digits",
+  "pub_date": "2026-10-27T14:33:18Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjZXSlpSMktlVlZ5cFkza3JxU3NLd052KzNBQ2wrbFF2MGpBcG9tNGNsZHN1cjhROWoySytITHp5T1duWHRqTndlMkRpekQ4YVJ4YWluTEphWWJHNFEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNzA3NjgxCWZpbGU6UzMgQnJvd3Nlci5hcHAudGFyLmd6CXZlcnNpb246MC41LjAKbjlVT1pWeEl4TEFtd3huYzFrbmFGSHhnK3VpTkZ2c29vU2FHUHpIdkJrY29MeG9vbjdLRTgrUkZyN2F6bWdXeWRwYklpWEtjWW0xdXJMYkdBR2JpQUE9PQo=",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/s3browser-v0.5.0/S3Browser.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWndCRG9FMmIyZ21tWmhTcytPVGdTb2k1LzhrZ1VlZDZJVGhLVXZENDZ5RjExZkdqaVVHRXBwUXJ2ZHkxWjNId0RqTmk2bGZlNEI0UmZZQ1ZCOVZFVmdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTExNTIwCWZpbGU6TmltYm8uYXBwLnRhci5negl2ZXJzaW9uOjAuNi4wCm9QRXRzMWJpcHVYcnJCaGsvQjl2WEF3VXFpNlRqS09mQ3FmWFAxQ1AyS1drWU5vbTM3YW9wWUk5VjN0VVZmc3Z6R09UTFZmNjBQR2c3MEY0QzVNQkFRPT0K",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/s3browser-v0.6.0/S3Browser.app.tar.gz"
     },
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjZXSlpSMktlVlZ5cFkza3JxU3NLd052KzNBQ2wrbFF2MGpBcG9tNGNsZHN1cjhROWoySytITHp5T1duWHRqTndlMkRpekQ4YVJ4YWluTEphWWJHNFEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNzA3NjgxCWZpbGU6UzMgQnJvd3Nlci5hcHAudGFyLmd6CXZlcnNpb246MC41LjAKbjlVT1pWeEl4TEFtd3huYzFrbmFGSHhnK3VpTkZ2c29vU2FHUHpIdkJrY29MeG9vbjdLRTgrUkZyN2F6bWdXeWRwYklpWEtjWW0xdXJMYkdBR2JpQUE9PQo=",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/s3browser-v0.5.0/S3Browser.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWndCRG9FMmIyZ21tWmhTcytPVGdTb2k1LzhrZ1VlZDZJVGhLVXZENDZ5RjExZkdqaVVHRXBwUXJ2ZHkxWjNId0RqTmk2bGZlNEI0UmZZQ1ZCOVZFVmdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTExNTIwCWZpbGU6TmltYm8uYXBwLnRhci5negl2ZXJzaW9uOjAuNi4wCm9QRXRzMWJpcHVYcnJCaGsvQjl2WEF3VXFpNlRqS09mQ3FmWFAxQ1AyS1drWU5vbTM3YW9wWUk5VjN0VVZmc3Z6R09UTFZmNjBQR2c3MEY0QzVNQkFRPT0K",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/s3browser-v0.6.0/S3Browser.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjhwTGFFZ3U5MUlpN2ExYkxlY3A3Uitxazg1bDlraHUyNUFxeUFIVUFycERtZEpxSit5TEMxZThEOXlHRW96QjNVdXJoRjZxTzB4bGtaSGxSNng4NGdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNzA3NjA1CWZpbGU6UzMgQnJvd3Nlcl8wLjUuMF94NjRfZW4tVVMubXNpCXZlcnNpb246MC41LjAKcWdnMXI4MU5IMXVsTkkxSmNGdDIvdGkycFZ6N2JYYVlNUFltSnpoenZERVBtVHJmOEtDMjc5YXhLMVNpV1c2ZnhrTlk1Zjl2UCtWdlgzcmRJcHdMQlE9PQo=",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/s3browser-v0.5.0/S3Browser.msi"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWndVQzdLK2l0b0tiNVJEZE52QUkxL1BOS2J0V1Z5K01SNjBJOHFBZWtXWVd2dWZOaHhscGs4WEY1aktnOWFCQUtYcjdveVlCWlZWSkh5djlodVpqT1FFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTEwODY0CWZpbGU6TmltYm9fMC42LjBfeDY0X2VuLVVTLm1zaQl2ZXJzaW9uOjAuNi4wCnJ6TE01STgxYXRHa2xLODdlZUs0cXpwRmZjT28vcmZhYWo0SHNPYlBWc3ovWGdTSWljdkJFcVJ1YUgwdndGYUZRQ0hoL1ZrY2tLY1B6bmhTR1VmN0JRPT0K",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/s3browser-v0.6.0/S3Browser.msi"
     },
     "linux-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWi9uRTg4NHJGcHRNRndKeUZLVXdVZ1owdjBQVlhBUlArMVNrU1FuVnlYbWkrakN3L3QwSGhpbVI4SFlPTWZnRmMvN0Jkd2wzRGI4NUZMUnp4Qlg4aEFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNzA3NDY5CWZpbGU6UzMgQnJvd3Nlcl8wLjUuMF9hbWQ2NC5BcHBJbWFnZQl2ZXJzaW9uOjAuNS4wCjViVThjZnRqZXpSQ3l1V3ptUi9PWEZ6OGoyRVR4OHV2NituVDNzQklTb1VybXEzb3ZESkVZOUNYRHc3YkthUmo2WmJQaWYwVktJOVZUZENQRVZDbEFRPT0K",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/s3browser-v0.5.0/S3Browser.AppImage"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjVsK0xUV1lKN01adEhRTERENzREY2s4VGN2VzUwY3FnbUdrcGZzSEFXUGNaY0xIcGdYWVVPeEcxT0NTWlNHemlCdHJnRVpsbGgraHZ6NWQ5OXF4TXdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTEwNjUzCWZpbGU6TmltYm9fMC42LjBfYW1kNjQuQXBwSW1hZ2UJdmVyc2lvbjowLjYuMAowdFBGRDhIc1QrWllZQU81UU1NMytHOTA5R2p1OG9UOXdDekIxSGI5L2NFSWxQS3ZrcHdPMysyOUdRMEZ5TmlRU25NbGVSOXRqczFaQXdnVGZwWnlEUT09Cg==",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/s3browser-v0.6.0/S3Browser.AppImage"
     }
   }
 }
