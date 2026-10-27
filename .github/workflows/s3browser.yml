@@ -1,6 +1,6 @@
-name: S3 Browser
+name: Nimbo
 
-# Builds S3 Browser from the private EmilMoe/S3Client repo. The source is only checked out on
+# Builds Nimbo from the private EmilMoe/S3Client repo. The source is only checked out on
 # the runner; this repo holds the releases and s3browser/latest.json, which the installed apps
 # check for updates.
 #
@@ -162,7 +162,7 @@ jobs:
             cat notes.md
             echo
             cat <<'NOTE'
-          **macOS:** the app isn't notarized by Apple, so the first launch says "S3 Browser" Not Opened. Click Done, then open System Settings → Privacy & Security and click **Open Anyway**. Or run `xattr -dr com.apple.quarantine "/Applications/S3 Browser.app"` in Terminal. Updates installed from within the app open normally.
+          **macOS:** the app isn't notarized by Apple, so the first launch says "Nimbo" Not Opened. Click Done, then open System Settings → Privacy & Security and click **Open Anyway**. Or run `xattr -dr com.apple.quarantine "/Applications/Nimbo.app"` in Terminal. Updates installed from within the app open normally.
 
           **Windows:** S3Browser.exe is portable and needs the WebView2 runtime (built into Windows 10/11); use S3Browser.msi for auto-updates. If SmartScreen warns, click More info → Run anyway.
 
@@ -171,7 +171,7 @@ jobs:
           } > body.md
           gh release create "s3browser-$REF" $(ls dist/* | grep -v '\.sig$') \
             --repo "$GITHUB_REPOSITORY" --target main \
-            --title "S3 Browser $REF" --notes-file body.md
+            --title "Nimbo $REF" --notes-file body.md
 
       - name: Update s3browser/latest.json
         env:
@@ -196,6 +196,6 @@ jobs:
           path=s3browser/latest.json
           sha=$(gh api "repos/$GITHUB_REPOSITORY/contents/$path" --jq .sha 2>/dev/null || true)
           gh api -X PUT "repos/$GITHUB_REPOSITORY/contents/$path" \
-            -f message="S3 Browser $REF" \
+            -f message="Nimbo $REF" \
             -f content="$(base64 -w0 latest.json)" \
             ${sha:+-f sha="$sha"} > /dev/null
