@@ -1,10 +1,10 @@
 name: Nimbo
 
-# Builds Nimbo from the private EmilMoe/S3Client repo. The source is only checked out on
+# Builds Nimbo from the private EmilMoe/nimbo repo. The source is only checked out on
 # the runner; this repo holds the releases and nimbo/latest.json, which the installed apps
 # check for updates.
 #
-# Started by S3Client when a tag like v0.2.0 is pushed (repository_dispatch), or by hand from
+# Started by nimbo when a tag like v0.2.0 is pushed (repository_dispatch), or by hand from
 # the Actions tab. A v* ref publishes release nimbo-<ref>; any other ref only builds.
 #
 # Files per platform:
@@ -14,7 +14,7 @@ name: Nimbo
 #   Linux   Nimbo.AppImage  (portable, needs FUSE)
 # plus the signed updater files (Nimbo.app.tar.gz, .msi and .AppImage with .sig).
 #
-# Secrets: APPS_TOKEN (fine-grained, Contents read on EmilMoe/S3Client),
+# Secrets: APPS_TOKEN (fine-grained, Contents read on EmilMoe/nimbo),
 # TAURI_SIGNING_PRIVATE_KEY and TAURI_SIGNING_PRIVATE_KEY_PASSWORD.
 on:
   repository_dispatch:
@@ -22,7 +22,7 @@ on:
   workflow_dispatch:
     inputs:
       ref:
-        description: S3Client tag or branch (v* publishes a release)
+        description: nimbo tag or branch (v* publishes a release)
         required: true
         default: main
 
@@ -55,7 +55,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
-          repository: EmilMoe/S3Client
+          repository: EmilMoe/nimbo
           ref: ${{ env.REF }}
           token: ${{ secrets.APPS_TOKEN }}
           persist-credentials: false
@@ -134,7 +134,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
-          repository: EmilMoe/S3Client
+          repository: EmilMoe/nimbo
           ref: ${{ env.REF }}
           token: ${{ secrets.APPS_TOKEN }}
           persist-credentials: false
