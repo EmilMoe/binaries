@@ -111,7 +111,7 @@ jobs:
             Windows)
               cp src-tauri/target/release/bundle/msi/*.msi dist/Nimbo.msi
               cp src-tauri/target/release/bundle/msi/*.msi.sig dist/Nimbo.msi.sig
-              cp src-tauri/target/release/s3client.exe dist/Nimbo.exe ;;
+              cp src-tauri/target/release/nimbo.exe dist/Nimbo.exe ;;
             Linux)
               cp src-tauri/target/release/bundle/appimage/*.AppImage dist/Nimbo.AppImage
               cp src-tauri/target/release/bundle/appimage/*.AppImage.sig dist/Nimbo.AppImage.sig ;;
