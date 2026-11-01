@@ -1,23 +1,23 @@
 {
-  "version": "0.7.0",
-  "notes": "- Folder compare, marquee selection, drag and drop copies by default (Option/Shift moves)\n- Landing page: fix mobile backdrop vanishing (fade by px, fill extension with bottom color)\n- Landing page: extend mobile backdrop below the screen edge for iOS Safari toolbar\n- Landing page: mobile menu, taller faded backdrop on phones, no horizontal scroll\n- Landing page: painted landscape background, new nav, quick look and logo cloud sections",
-  "pub_date": "2026-11-01T13:30:44Z",
+  "version": "0.7.1",
+  "notes": "- Send feedback from the app: Help menu sheet, filed as GitHub issues via the landing page",
+  "pub_date": "2026-11-01T16:44:39Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjJCa0tnRWZ6MEx6bzZuNmpEQVNKeWN0UTRIckltWStuVi9VTDRRaGJQTVpVeGZIcmlVRjg1MzhRMlM1R0twVmNKVFJxamZ5Zkc0VU5LRHdzTEdrZkFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTM5Nzc1CWZpbGU6TmltYm8uYXBwLnRhci5negl2ZXJzaW9uOjAuNy4wCkdKRVJubjVGRXg2eERDMkViY2hucEU5R1p0UUN5cnhxUEN6dTlESUdSNW1IZ0xyS3k2eVZnaFVWb1BISlM4dzVTc25vRVlHdUxzMVh3eGxzWlMyK0RRPT0K",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/nimbo-v0.7.0/Nimbo.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjJYWUNIVFVDRzFTemFRUVRBOFdCZVdFRURhRlBHclNpU01aSnAwWmJIMDBkVFRBVlNiNFI0S3lPQ21SVFNDWWgyQzVpdHgrb1pvRzk4VEU0SVF1cXdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTUxNDAwCWZpbGU6TmltYm8uYXBwLnRhci5negl2ZXJzaW9uOjAuNy4xCjV1NlFhWkJ0bkkxTVBZNXM2Tko1T3pQeXU5aGlBSlJ0Nm1IUzNLNnpSemZoSVo2Z3VTb3owVWRwVzQ5a2c2dlcwejlkZVlZQ0lDZ3RzZzhkMVFSOUJnPT0K",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/nimbo-v0.7.1/Nimbo.app.tar.gz"
     },
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjJCa0tnRWZ6MEx6bzZuNmpEQVNKeWN0UTRIckltWStuVi9VTDRRaGJQTVpVeGZIcmlVRjg1MzhRMlM1R0twVmNKVFJxamZ5Zkc0VU5LRHdzTEdrZkFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTM5Nzc1CWZpbGU6TmltYm8uYXBwLnRhci5negl2ZXJzaW9uOjAuNy4wCkdKRVJubjVGRXg2eERDMkViY2hucEU5R1p0UUN5cnhxUEN6dTlESUdSNW1IZ0xyS3k2eVZnaFVWb1BISlM4dzVTc25vRVlHdUxzMVh3eGxzWlMyK0RRPT0K",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/nimbo-v0.7.0/Nimbo.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjJYWUNIVFVDRzFTemFRUVRBOFdCZVdFRURhRlBHclNpU01aSnAwWmJIMDBkVFRBVlNiNFI0S3lPQ21SVFNDWWgyQzVpdHgrb1pvRzk4VEU0SVF1cXdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTUxNDAwCWZpbGU6TmltYm8uYXBwLnRhci5negl2ZXJzaW9uOjAuNy4xCjV1NlFhWkJ0bkkxTVBZNXM2Tko1T3pQeXU5aGlBSlJ0Nm1IUzNLNnpSemZoSVo2Z3VTb3owVWRwVzQ5a2c2dlcwejlkZVlZQ0lDZ3RzZzhkMVFSOUJnPT0K",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/nimbo-v0.7.1/Nimbo.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjQwdldiaEhRNC9rMFlCbnZrVi9tRkgwUE1FcHBoUzlHQkxiTHRpRko2MDlhN212THEvVXhobWNMTDhqVHArcElLWElXcjNzQytwTjBIRUZrUnZwdmdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTM5NjAzCWZpbGU6TmltYm9fMC43LjBfeDY0X2VuLVVTLm1zaQl2ZXJzaW9uOjAuNy4wCnRoblo0dGxYYXAxbHJvU1FiRVozTGd3Y05jZXVLVWxVdzlrcHpycHN1dzNMSFVCWGw5Q3RteUIzVDgzbzNGYnV0RDVPd0M0M3dPUUhWNXpwbm9qOEJ3PT0K",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/nimbo-v0.7.0/Nimbo.msi"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWngwemc0SUFjTEhRQzh4aldPMmlMZit2bFhmUHZBT0hRS1BsNWt6VHdyQ3FUMmJOSnRxVDJoNzcvNjF2Nkxvc3NDMTBhbWw2T0EyMERGV2dYNGV6dVFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTUxMDUyCWZpbGU6TmltYm9fMC43LjFfeDY0X2VuLVVTLm1zaQl2ZXJzaW9uOjAuNy4xClVyYmhQMDVaejdNd3AwTGVHU3kvcGhxajhMTDhuZ2MwdE5TMXlNZ2JqRmx5R2pMNi9ETHRISWhXdHp1M3piVmxiQk4xYmZtUWxsSjFMd2d2SHBCc0F3PT0K",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/nimbo-v0.7.1/Nimbo.msi"
     },
     "linux-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWngyc3ZtMzRlMEFjSGRieHpraEhFRFUzdWxEUlVTSmFoN0NBayt5cTNDUURZV28zaXQ1Y2hNcnRVZW5NVm9aYU5RRDRhUk1lbWxwdktZUDJRRFZkTEFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTM5NDc2CWZpbGU6TmltYm9fMC43LjBfYW1kNjQuQXBwSW1hZ2UJdmVyc2lvbjowLjcuMApFWldEbWNxSm9UVllDRzhzTEEwUU04dU9QcEovN3lyVHRRd0hEclYwTW9vY3BZb0pLZE5EUUZNbnhIMVBRdkRVK0hWMTZFRDhHeWtIb3N1eWFhVGlEZz09Cg==",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/nimbo-v0.7.0/Nimbo.AppImage"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjd5ZFZwRFBVc2kwQysrN05pWlplQWFKMmNIVVpuSmVhNXVFaWtWM0RITVBBSGlMK3NIVnhKT1c0TEpTMjZVOEF0VW5aS1dIRWVSeFdJRVZlN0w0U3dzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTUwOTU0CWZpbGU6TmltYm9fMC43LjFfYW1kNjQuQXBwSW1hZ2UJdmVyc2lvbjowLjcuMQpCVlRVcU8yOE5ZRWhBNWFaaE80eG5qQzA4S0pwZCtPUEFlRXk2dE1wQU1OS1VXdWl5aW5TSUR5RmM2RWxva1ZwRmdLOGkzRXZ5NUw0dEo3ZVkxZ29DUT09Cg==",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/nimbo-v0.7.1/Nimbo.AppImage"
     }
   }
 }
