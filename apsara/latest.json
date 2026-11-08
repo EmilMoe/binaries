@@ -1,19 +1,19 @@
 {
-  "version": "0.5.0",
-  "notes": "- RustFS som S3-lager, deploy til egne servere, tunnel og import fra Valet\n- Vis hvad .env bruger uden for Apsaras tjenester\n- Sæt et projekt op ud fra dets egne filer\n- Miljøer kan slettes, og adgang i stedet for modtagere\n- Opdateringstjek via GitHubs API, og ingen selvopdatering i dev-build",
-  "pub_date": "2026-11-08T11:26:58Z",
+  "version": "0.5.1",
+  "notes": "- Mislykket hentning af en opdatering kan prøves igen, og Hent henter filen i stedet for at åbne GitHub",
+  "pub_date": "2026-11-08T11:51:03Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjV5ZWEzM2lLOUVzMXlJbFNyWHhIb0loVUx5RTBSSGxPTURIZWh1dk9BdkdpMjRGL0NoaDBKUStjY3FDc3gzZG5Wd2ZIb0ZxNE5xVS9WOWRja3BnV0E4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MTM3MTUzCWZpbGU6QXBzYXJhLmFwcC50YXIuZ3oJdmVyc2lvbjowLjUuMApqeTd2eG1uUjVwb1RMeFZaUklCZTQ4Z3UrejdDcW1rK0NNNmFXc2lKRlpEWThnOUFhTjRrVnduTklRTmlDMUpVVExwRzdKOGoyNVBPbkF3c1BrQmRDZz09Cg==",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.5.0/Apsara.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjRXMVlqT2RFOGo2WHNoMy9mVzk1Wm1VRXpDZFF0OWcxWXBmTnhERHIzNVZ2MUJ4VjJ3QkpXclBmN0w5NnNRU29tdnlJbmJHRTJSUjNCdW9kVmh3endZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MTM4NjQyCWZpbGU6QXBzYXJhLmFwcC50YXIuZ3oJdmVyc2lvbjowLjUuMQp2UTNyZ0FCRGc4ME9HaG9zS2N6aGFKRDJzcEExTFhWWXNTQjFrcDNOZE1hNHBwRC9BMm5FL3ZLOW8rTGFQMEUwdTRxU2haMkNBdVk5SVN0N3QzNEVCQT09Cg==",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.5.1/Apsara.app.tar.gz"
     },
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjV5ZWEzM2lLOUVzMXlJbFNyWHhIb0loVUx5RTBSSGxPTURIZWh1dk9BdkdpMjRGL0NoaDBKUStjY3FDc3gzZG5Wd2ZIb0ZxNE5xVS9WOWRja3BnV0E4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MTM3MTUzCWZpbGU6QXBzYXJhLmFwcC50YXIuZ3oJdmVyc2lvbjowLjUuMApqeTd2eG1uUjVwb1RMeFZaUklCZTQ4Z3UrejdDcW1rK0NNNmFXc2lKRlpEWThnOUFhTjRrVnduTklRTmlDMUpVVExwRzdKOGoyNVBPbkF3c1BrQmRDZz09Cg==",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.5.0/Apsara.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjRXMVlqT2RFOGo2WHNoMy9mVzk1Wm1VRXpDZFF0OWcxWXBmTnhERHIzNVZ2MUJ4VjJ3QkpXclBmN0w5NnNRU29tdnlJbmJHRTJSUjNCdW9kVmh3endZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MTM4NjQyCWZpbGU6QXBzYXJhLmFwcC50YXIuZ3oJdmVyc2lvbjowLjUuMQp2UTNyZ0FCRGc4ME9HaG9zS2N6aGFKRDJzcEExTFhWWXNTQjFrcDNOZE1hNHBwRC9BMm5FL3ZLOW8rTGFQMEUwdTRxU2haMkNBdVk5SVN0N3QzNEVCQT09Cg==",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.5.1/Apsara.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjVEWlVjNkVwamxIMTlyNWJtZThMWDVGWCtNYWp3VUIxNlNuV2E1dWU5eFk2MEZIOFFibThSaU9mdHFGb2xNK2J5MXZFVm9iekFBaTFrUllldUJNUFE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MTM2NzAyCWZpbGU6QXBzYXJhXzAuNS4wX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjUuMApQN1FjR2NZUjZVNVI3dVRJZklUV1hDc2F5Nzd4aU5wa2loMVYxL2N4dWsxakozdjN1aXJiSUh1bzhpTlZxTkN2T2t4Qms0ZTZpNzNnZHNtZkNCd0tEdz09Cg==",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.5.0/Apsara.msi"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjFQS1JsaTFrL1JtaVd5UFdRbTNMUzBzMTluVldxZ1llWmdXaFN3amRuWTVhWUdVaERYTnN6L3l3RFNqVVFqYzNpWWZkMzlzeXd4RVhiVUZ4SVBhREE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0MTM4NTA0CWZpbGU6QXBzYXJhXzAuNS4xX3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjUuMQo4eEtuZG9BV3NjcVMza3h0SjNHancrRk9vWC9qQXJoWFJ6VXdCTzlBTmRpemhBcmVKWndxb1ordEhNNnBIczg5REppeW43RHFoVXhjNHk5SEZ3K1RDQT09Cg==",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.5.1/Apsara.msi"
     }
   }
 }
