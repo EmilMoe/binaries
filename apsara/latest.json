@@ -1,19 +1,19 @@
 {
-  "version": "0.7.4",
-  "notes": "- Horizon starter igen, når projektets kode ændrer sig (stierne fra watch i config/horizon.php), så den kører den nye kode. Kan slås fra i Horizons indstillinger\n- Deployen venter til sidst på, at sitets APP_URL svarer med andet end 404 eller en serverfejl, i højst et minut",
-  "pub_date": "2026-11-19T13:56:23Z",
+  "version": "0.7.5",
+  "notes": "- Nyt ikon: en lotus på natteblå baggrund i stedet for Tauris standardlogo, også i menulinjen. npm run icons laver alle ikoner ud fra SVG-kilderne i src-tauri/icons/source",
+  "pub_date": "2026-11-19T21:59:56Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjRrUVpUK08vL2YrZDFvMEhaYTduOXNva2l1eEZjTWpMVEZvWmRvVEV6QWZvZ1lrUEY5QTAzOTBpTW9mbUh3NTFOL1FGWFZNY1pIYVlaVXVGVVRQendrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MDk2NTI5CWZpbGU6QXBzYXJhLmFwcC50YXIuZ3oJdmVyc2lvbjowLjcuNApQNUJmeEV5cURJSEdIRmVMTnJ5WHY2emJSaU91VlJ2QjRpRWk2cFFjTEJsVGNPd2JuMk1kSDJUd0dFN1VLczI5V3AzRDh0bENWTGhxempSemIxQWFCQT09Cg==",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.7.4/Apsara.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjlXWCtOT295cDd6VFdGTEJydGtUazcvWE50TkpWTk9meUJ4ZlBxYmZlOGVyMnh0ZytWWjVnSUJrMW5XVXc4U3UvQXpDdTduRWd4REZqaVQ0NlNQb1FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTI1NTc2CWZpbGU6QXBzYXJhLmFwcC50YXIuZ3oJdmVyc2lvbjowLjcuNQpNbGlCMEtWWWI4d0lOdGRsRVZXSm9GREVKUEIwZmlmYkROMGtwZ0tKak85TXY3cytOQ0dHY0lXRHI2UThOc2RibjRoVkM5U2Z1TFpRUHhJQ0hXNTJCUT09Cg==",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.7.5/Apsara.app.tar.gz"
     },
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjRrUVpUK08vL2YrZDFvMEhaYTduOXNva2l1eEZjTWpMVEZvWmRvVEV6QWZvZ1lrUEY5QTAzOTBpTW9mbUh3NTFOL1FGWFZNY1pIYVlaVXVGVVRQendrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MDk2NTI5CWZpbGU6QXBzYXJhLmFwcC50YXIuZ3oJdmVyc2lvbjowLjcuNApQNUJmeEV5cURJSEdIRmVMTnJ5WHY2emJSaU91VlJ2QjRpRWk2cFFjTEJsVGNPd2JuMk1kSDJUd0dFN1VLczI5V3AzRDh0bENWTGhxempSemIxQWFCQT09Cg==",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.7.4/Apsara.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjlXWCtOT295cDd6VFdGTEJydGtUazcvWE50TkpWTk9meUJ4ZlBxYmZlOGVyMnh0ZytWWjVnSUJrMW5XVXc4U3UvQXpDdTduRWd4REZqaVQ0NlNQb1FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTI1NTc2CWZpbGU6QXBzYXJhLmFwcC50YXIuZ3oJdmVyc2lvbjowLjcuNQpNbGlCMEtWWWI4d0lOdGRsRVZXSm9GREVKUEIwZmlmYkROMGtwZ0tKak85TXY3cytOQ0dHY0lXRHI2UThOc2RibjRoVkM5U2Z1TFpRUHhJQ0hXNTJCUT09Cg==",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.7.5/Apsara.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjliWnJ5MjUwRm1RcXNva1Z2a0llNHdhSUF3NDlFcWZ0cTBOSS9hK3kwbk0zeC9HK2NvWnpLd3dqanhmU1I4dVJtMHVKaTVyVGIyODBFaXRxOStwYXdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MDk2MDQ1CWZpbGU6QXBzYXJhXzAuNy40X3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjcuNAplUEZEcGhaaDlmUGtOaE83bEZLdDZvWld4RHR2dFZpM0k3ZURwTEkxOTA4cWM1bEdxVUlVYTkzTWRUeGMyZm1XM01jOFhFOEJtTmlIOUN0Z3Q2ekZBQT09Cg==",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.7.4/Apsara.msi"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWiszZUNDb1U5SUIvc2ZvbXZkZ0wxZ3FxYXZJV1krQkhlbE1WWHlEVm1yZXMva0VKV3NHdU40QnltT2RrL3N5ekVjVkQzYmJFdVorSFJ6OHA0d0FaVHdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTI1NTY4CWZpbGU6QXBzYXJhXzAuNy41X3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjcuNQpRdnRxMkowSUhxK0QrNWgwYkl5SFJXR09HVHphUzdLNkJyT3hQUEVvODVLQ1VSM3Rxa09VaFFiK1dKN3JudkdONngvSlJpQ3RZRGtkUDNtTmdPUWVDdz09Cg==",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.7.5/Apsara.msi"
     }
   }
 }
