@@ -1,19 +1,19 @@
 {
-  "version": "0.7.7",
-  "notes": "- Deploy: Apsaras egne Docker-filer blokerer ikke længere production, og rækken nævner de filer, der ikke er committet. Den lokale SQLite-database kommer ikke med i imaget; på serveren ligger den på storage-volumet, så den overlever en deploy. Seedere, der bruger Faker, og en APP_URL på denne Mac stoppes, før deployen bygger. Arket viser, når det tjekker, og tjekker igen efter en deploy",
-  "pub_date": "2026-11-19T23:40:42Z",
+  "version": "0.7.8",
+  "notes": "- En APP_URL på denne Mac vises nu i tjekket før deploy med en knap, der åbner miljøet, i stedet for at stoppe deployen",
+  "pub_date": "2026-11-19T23:57:01Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWndta3VCazVWeWgrdGQrOVpRRzRrR0RUVEdyU2hRS1dUdGZUTCtaRjNDblpFYnlwaGtTdjNHUjltVzNjWVBBNDQvNmNXZHFublZaT3kvYy81NzA1amdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTMxNDg0CWZpbGU6QXBzYXJhLmFwcC50YXIuZ3oJdmVyc2lvbjowLjcuNwpyb1djN0E3L21OWklFRjdFTURZamFTRzVjL1RjZ1NicVJRZVBFU2RwUm54OUtEOG5jRjRUTHhER1ozaWJjWXFiQW9DMmFPSXRXcUNpT0xoSmN3Y2VBZz09Cg==",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.7.7/Apsara.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjMydlZSM2tJTVBKaFJPV0VJdUpzbkY1MjMzV09MMGZUQ25mU2RTYmx3T1B4YUxwVWZPSmNZOWY0MVlCNWhZYkZLeDc4TFgzUHdlblg5VkZHZlBnaFE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTMyNjAwCWZpbGU6QXBzYXJhLmFwcC50YXIuZ3oJdmVyc2lvbjowLjcuOApaUjBKKzdiWEZjSUNlY2RPTmZFN0dLc241QVJLY0ErR0hKc21hZ0I0bXBmd1IrVi9Yd0RsZVhTZjM2UGg4SG5KMGNPa28wV3ZxYSt3TEFZZWJGeGZEZz09Cg==",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.7.8/Apsara.app.tar.gz"
     },
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWndta3VCazVWeWgrdGQrOVpRRzRrR0RUVEdyU2hRS1dUdGZUTCtaRjNDblpFYnlwaGtTdjNHUjltVzNjWVBBNDQvNmNXZHFublZaT3kvYy81NzA1amdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTMxNDg0CWZpbGU6QXBzYXJhLmFwcC50YXIuZ3oJdmVyc2lvbjowLjcuNwpyb1djN0E3L21OWklFRjdFTURZamFTRzVjL1RjZ1NicVJRZVBFU2RwUm54OUtEOG5jRjRUTHhER1ozaWJjWXFiQW9DMmFPSXRXcUNpT0xoSmN3Y2VBZz09Cg==",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.7.7/Apsara.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjMydlZSM2tJTVBKaFJPV0VJdUpzbkY1MjMzV09MMGZUQ25mU2RTYmx3T1B4YUxwVWZPSmNZOWY0MVlCNWhZYkZLeDc4TFgzUHdlblg5VkZHZlBnaFE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTMyNjAwCWZpbGU6QXBzYXJhLmFwcC50YXIuZ3oJdmVyc2lvbjowLjcuOApaUjBKKzdiWEZjSUNlY2RPTmZFN0dLc241QVJLY0ErR0hKc21hZ0I0bXBmd1IrVi9Yd0RsZVhTZjM2UGg4SG5KMGNPa28wV3ZxYSt3TEFZZWJGeGZEZz09Cg==",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.7.8/Apsara.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWitMRndGdEZrNTVqeEZiait5ZWYzcTh4YmZKbmtVZCtjdEhtemVJYVJGQVhMS3VMS2hCdC82Zmo4STdMbFpUOFlyOXI5Z09RYXJ5Z0htNjZrUWJia2drPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTMxNjE5CWZpbGU6QXBzYXJhXzAuNy43X3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjcuNwpoSkRzclBORU9xdGZrb0E3eThrc21zdzVRMzk3ZWlxbDJDZHlxSEZ1M3BBMGpxUG8xRHBwUW4rc2xzek0xaW1OZkRCSFl6N3J2VkVOYXpmYmF4UWJEdz09Cg==",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.7.7/Apsara.msi"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjVzT09nMWtUL3lISlh1V0lrNE1jdFFPOTVGS0FxZHlFcmtUNDRZeEtXb0dzOFJ4dnUyNDFtU280cllMcHVadzNXKy9CblZkUW9YRk9MR2wzVmVOUEFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTMyNDA3CWZpbGU6QXBzYXJhXzAuNy44X3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjcuOApiaGl5cU9XbUdzMUVlMWpVYlBweDE1dVQ3Mkx2MmZsS1BkY0E1WFBIMFliVS9tZzVmNlRLVnp0TzRDL0lQNUpQd1VISUVyUDBZQXNKSDVOK3ROWXBCQT09Cg==",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.7.8/Apsara.msi"
     }
   }
 }
