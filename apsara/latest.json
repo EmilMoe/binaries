@@ -1,19 +1,19 @@
 {
-  "version": "0.8.5",
-  "notes": "- Claude Code foreslår en commit-besked med emnelinje og en kort brødtekst, og hele svaret bruges\n- Commit-arket får et beskedfelt med flere linjer og en knap, der lader Claude Code foreslå beskeden",
-  "pub_date": "2026-11-20T14:57:30Z",
+  "version": "0.8.6",
+  "notes": "- Lotussen folder sig ud på skrivebordet, når Apsara starter\n- Større menulinje-ikon og et farvet lotusikon i systembakken på Windows og Linux\n- Git-side pr. site og en fælles git-tjeneste, som deployen også bruger",
+  "pub_date": "2026-11-20T16:11:44Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWnk1bDBmWXQ3QlM1MER2YzU1Vzdqb2xjOUhxQzFrNTNkYnJidHh3U1VZWSswc3VkYlNlVnBXUCtCYjBxZVFXK0lFZmNpcVVVN1pFc3N2dkx0MTlDb0FBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTg2NjI4CWZpbGU6QXBzYXJhLmFwcC50YXIuZ3oJdmVyc2lvbjowLjguNQpCeXBRWXhxbTg2R0gzQ3Rralk5aXluNEhhVjFBR21ML3Qyd3lKbW5CeVl2UGR4dk1LKzlYQ0VoaWRXRkx5QjZqbmMrRDNmQnVaV21ITUlVY3hqNnBBQT09Cg==",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.8.5/Apsara.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjZXbytFQ0VkNFozaFMzVE5ZQlEwRS9PcHJrS0Fid0IzT1duWG1ON1FYOWVNSWhhckJkallUek9RNWxSMG9ubEhuWmJqRVhBZFdxZ3dPd0lHTG5VNGdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTkxMDUxCWZpbGU6QXBzYXJhLmFwcC50YXIuZ3oJdmVyc2lvbjowLjguNgpzY2htNU5JQXgvNlFnSXZMRFBZWlRCWjZQZUtyOWh0dU44RG1lYTNoQytCQjFtNU9vVlZHbGNveExxOWpDb1JuQjlhMjJnQVJqeWtnTU1PbU0vQTZBdz09Cg==",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.8.6/Apsara.app.tar.gz"
     },
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWnk1bDBmWXQ3QlM1MER2YzU1Vzdqb2xjOUhxQzFrNTNkYnJidHh3U1VZWSswc3VkYlNlVnBXUCtCYjBxZVFXK0lFZmNpcVVVN1pFc3N2dkx0MTlDb0FBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTg2NjI4CWZpbGU6QXBzYXJhLmFwcC50YXIuZ3oJdmVyc2lvbjowLjguNQpCeXBRWXhxbTg2R0gzQ3Rralk5aXluNEhhVjFBR21ML3Qyd3lKbW5CeVl2UGR4dk1LKzlYQ0VoaWRXRkx5QjZqbmMrRDNmQnVaV21ITUlVY3hqNnBBQT09Cg==",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.8.5/Apsara.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjZXbytFQ0VkNFozaFMzVE5ZQlEwRS9PcHJrS0Fid0IzT1duWG1ON1FYOWVNSWhhckJkallUek9RNWxSMG9ubEhuWmJqRVhBZFdxZ3dPd0lHTG5VNGdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTkxMDUxCWZpbGU6QXBzYXJhLmFwcC50YXIuZ3oJdmVyc2lvbjowLjguNgpzY2htNU5JQXgvNlFnSXZMRFBZWlRCWjZQZUtyOWh0dU44RG1lYTNoQytCQjFtNU9vVlZHbGNveExxOWpDb1JuQjlhMjJnQVJqeWtnTU1PbU0vQTZBdz09Cg==",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.8.6/Apsara.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjBUWDB0cGdjUG81MGVIMXJwOG9vT21TTWZiZlZLUWs5QVpvZGpKVk0ySW9XRnhZNkkzVHZTRjM1QVNXYzJFTFM5Z3Y5REhTaytkS2ZTYm9MWUlhY3d3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTg2NTc4CWZpbGU6QXBzYXJhXzAuOC41X3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjguNQpVT3JjejJlRjRGTTVMelBIdDdhUTdBRHk4WURXSlozWEdsYTBrRzFpV3dQc0lGYllqaXI3MGE0TFJmcXZ0VDlYUnhTbmtncjg2YlpvbXlJKy9veGFBZz09Cg==",
-      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.8.5/Apsara.msi"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTMXhub1o0dmFyWjVSY1lIRWZFVm9oSSthN0lDd1FReGU1dy8wRHJhblRJMC8rRSs5NExPVlE2SHM0dTQ3ZVM5NGhpcFE3eGN0bDk0VmhhcWNCOTdpVHQyYnM2dHpCTUF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MTkwNjA4CWZpbGU6QXBzYXJhXzAuOC42X3g2NF9lbi1VUy5tc2kJdmVyc2lvbjowLjguNgpKMGJoWHdKT2JtNVZhUlp4RGd6V3VxYUh1M2NwSllHQVFLUXFpdUFvTWl3S21LZ1BHUzFkVUQ5RzV1UzRhQTBreVRkTWZLd1FWajdPS2VodTV5a05EQT09Cg==",
+      "url": "https://github.com/EmilMoe/binaries/releases/download/apsara-v0.8.6/Apsara.msi"
     }
   }
 }
